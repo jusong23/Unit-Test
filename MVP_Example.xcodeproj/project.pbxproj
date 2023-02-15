@@ -22,6 +22,8 @@
 		7527C0F3299B4EBC00351F67 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7527C0F2299B4EBC00351F67 /* NetworkService.swift */; };
 		7527C0F5299B4F5A00351F67 /* OpenWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7527C0F4299B4F5A00351F67 /* OpenWeather.swift */; };
 		7527C0FC299B500B00351F67 /* SimpleError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7527C0FB299B500B00351F67 /* SimpleError.swift */; };
+		7527C104299C70AB00351F67 /* MockMVP_ExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7527C103299C70AB00351F67 /* MockMVP_ExampleTests.swift */; };
+		7527C106299C93B700351F67 /* OpenWeatherTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7527C105299C93B700351F67 /* OpenWeatherTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,8 @@
 		7527C0F2299B4EBC00351F67 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		7527C0F4299B4F5A00351F67 /* OpenWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWeather.swift; sourceTree = "<group>"; };
 		7527C0FB299B500B00351F67 /* SimpleError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleError.swift; sourceTree = "<group>"; };
+		7527C103299C70AB00351F67 /* MockMVP_ExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMVP_ExampleTests.swift; sourceTree = "<group>"; };
+		7527C105299C93B700351F67 /* OpenWeatherTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWeatherTest.swift; sourceTree = "<group>"; };
 		B82B48FB3EDB3E1D96685542 /* Pods-MVP_ExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVP_ExampleTests.debug.xcconfig"; path = "Target Support Files/Pods-MVP_ExampleTests/Pods-MVP_ExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BF42A8B1D3817319846ADC13 /* Pods-MVP_ExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVP_ExampleTests.release.xcconfig"; path = "Target Support Files/Pods-MVP_ExampleTests/Pods-MVP_ExampleTests.release.xcconfig"; sourceTree = "<group>"; };
 		CDE03727355C47CE691C412F /* Pods-MVP_Example-MVP_ExampleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVP_Example-MVP_ExampleUITests.release.xcconfig"; path = "Target Support Files/Pods-MVP_Example-MVP_ExampleUITests/Pods-MVP_Example-MVP_ExampleUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -137,7 +141,8 @@
 		7527C0BD2999D87E00351F67 /* MVP_ExampleTests */ = {
 			isa = PBXGroup;
 			children = (
-				7527C0BE2999D87E00351F67 /* MVP_ExampleTests.swift */,
+				7527C102299C708200351F67 /* Mock */,
+				7527C0FD299C5C6700351F67 /* Tests */,
 			);
 			path = MVP_ExampleTests;
 			sourceTree = "<group>";
@@ -155,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				7527C0F4299B4F5A00351F67 /* OpenWeather.swift */,
+				7527C105299C93B700351F67 /* OpenWeatherTest.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -175,6 +181,22 @@
 				7527C0D72999EEC300351F67 /* Presenter.swift */,
 			);
 			path = Scenes;
+			sourceTree = "<group>";
+		};
+		7527C0FD299C5C6700351F67 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				7527C0BE2999D87E00351F67 /* MVP_ExampleTests.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		7527C102299C708200351F67 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				7527C103299C70AB00351F67 /* MockMVP_ExampleTests.swift */,
+			);
+			path = Mock;
 			sourceTree = "<group>";
 		};
 		813A857C9C762CB844AB0865 /* Frameworks */ = {
@@ -440,6 +462,7 @@
 			files = (
 				7527C0F5299B4F5A00351F67 /* OpenWeather.swift in Sources */,
 				7527C0F3299B4EBC00351F67 /* NetworkService.swift in Sources */,
+				7527C106299C93B700351F67 /* OpenWeatherTest.swift in Sources */,
 				7527C0AC2999D87B00351F67 /* ViewController.swift in Sources */,
 				7527C0A82999D87B00351F67 /* AppDelegate.swift in Sources */,
 				7527C0D82999EEC300351F67 /* Presenter.swift in Sources */,
@@ -453,6 +476,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7527C0BF2999D87E00351F67 /* MVP_ExampleTests.swift in Sources */,
+				7527C104299C70AB00351F67 /* MockMVP_ExampleTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,10 +7,10 @@ import Foundation
 
 // MARK: - OpenWeather
 struct OpenWeather: Codable {
-    let lat, lon: Double?
+    var lat, lon: Double?
     let timezone: String
     let timezoneOffset: Double?
-    let current: Current
+    var current: Current
     let minutely: [Minutely]
     let daily: [Daily]
 
@@ -24,7 +24,7 @@ struct OpenWeather: Codable {
 // MARK: - Current
 struct Current: Codable {
     let dt, sunrise, sunset: Double?
-    let temp, feelsLike: Double?
+    var temp, feelsLike: Double?
     let pressure, humidity: Double?
     let dewPoint: Double?
     let uvi, clouds, visibility: Double?

@@ -14,25 +14,35 @@ final class ReviewListViewController: UIViewController {
     private lazy var presenter = ReviewListPresenter(viewController: self)
     var latitude = UILabel()
     var longitude = UILabel()
-    private var openWeather = BehaviorSubject<[OpenWeather]>(value: [])
+    var temperature = UILabel()
+//    var openWeather = BehaviorSubject<[OpenWeather]>(value: [])
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         presenter.viewDidLoad()
     }
-    
-    func setUIComponents(_ lat: Double, _ lon: Double) {
-        latitude.text = "위도: " + String(lat)
-        longitude.text = "경도: " + String(lon)
-    }
-    
+}
+
+extension ReviewListViewController {
     @objc func didAPICallButtonTapped() {
-        presenter.callAPI()
+        presenter.didAPICallButtonTapped()
     }
 }
 
 extension ReviewListViewController: ReviewListProtocol {
+
+    func updateUIAfterResponse(_ lat: Double, _ lon: Double, _ temp: Double) {
+
+        print(#function)
+        // 요청 값
+        latitude.text = "위도: " + String(lat)
+        longitude.text = "경도: " + String(lon)
+
+        // 응답 값
+        temperature.text = "온도: " + String(temp)
+    }
+
     func setUpNaivigationBar() {
         title = "MVP"
         view.backgroundColor = .systemBackground
@@ -42,15 +52,17 @@ extension ReviewListViewController: ReviewListProtocol {
         navigationItem.rightBarButtonItem = rightBarButtonItem
     }
 
-    func callAPI(_ openWeather: [OpenWeather]) {
-        // 방출받은거 출력
-        self.openWeather.onNext(openWeather)
-        self.setUIComponents((openWeather.first?.lat)!, (openWeather.first?.lon)!)
-    }
+//    func callAPI(_ openWeather: [OpenWeather]) {
+//        // 방출받은거 출력
+////        self.openWeather.onNext(openWeather)
+//
+//        //
+////        presenter.test()
+//    }
 
     func setUpViews() {
         [
-            latitude, longitude
+            latitude, longitude, temperature
         ].forEach {
             view.addSubview($0)
         }
@@ -62,6 +74,11 @@ extension ReviewListViewController: ReviewListProtocol {
         longitude.snp.makeConstraints { make in
             make.top.equalTo(latitude.snp.bottom).offset(20)
             make.leading.equalTo(latitude.snp.leading)
+        }
+
+        temperature.snp.makeConstraints { make in
+            make.top.equalTo(longitude.snp.bottom).offset(20)
+            make.leading.equalTo(longitude.snp.leading)
         }
     }
 }
